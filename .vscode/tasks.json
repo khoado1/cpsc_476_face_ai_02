@@ -1,0 +1,34 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Create venv",
+      "type": "shell",
+      "command": "python3 -m venv .venv",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Install project dependencies",
+      "type": "shell",
+      "command": "source .venv/bin/activate && python -m pip install --upgrade pip && python -m pip install opencv-python cvzone djitellopy",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "dependsOn": ["Create venv"]
+    },
+    {
+      "label": "Run FaceDetectSimple.py",
+      "type": "shell",
+      "command": "source .venv/bin/activate && python FaceDetectSimple.py",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "dependsOn": ["Install project dependencies"]
+    }
+  ]
+}

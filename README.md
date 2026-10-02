@@ -6,11 +6,31 @@ python3 -m venv .venv
 source .venv/bin/activate
 
 pip install --upgrade pip
-pip install cvzone
+python -m pip install opencv-python mediapipe cvzone
 python CornerRectangleExample.py
 
 pip install djitellopy
-python tellopy.py
+python -m python tellopy.py
+
+#certificate installer fix
+open "/Applications/Python 3.11/Install Certificates.command"
+
+#error with mediapipe
+python -m pip install --force-reinstall "mediapipe==0.10.21"
+
+#numpy issue
+python -m pip uninstall opencv-python
+python -m pip install "numpy==1.26.4" "opencv-contrib-python==4.11.0.86" "mediapipe==0.10.21"
+
+#try again
+python -m pip uninstall -y opencv-python opencv-contrib-python opencv-python-headless opencv-contrib-python-headless
+python -m pip install --no-cache-dir "numpy==1.26.4" "opencv-contrib-python==4.11.0.86"
+
+#check if it worked
+python -c "import cv2; print(cv2.__version__, cv2.__file__); print(cv2.RETR_EXTERNAL, cv2.VideoCapture)"
+
+#use control+C to quit
+python FaceDetectionExample.py
 
 #Steps to create pull request to fix a problem
 On GitHub, open cvzone/cvzone and click Fork.
