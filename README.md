@@ -32,6 +32,18 @@ python -c "import cv2; print(cv2.__version__, cv2.__file__); print(cv2.RETR_EXTE
 #use control+C to quit
 python FaceDetectionExample.py
 
+
+#discussion
+https://docs.google.com/document/d/1Y5rbGPSP4JrvWcPjnrBClZhTP2C1pfXK-MIC6MMAoo0/edit?tab=t.0
+
+
+
+
+
+
+
+
+
 #Steps to create pull request to fix a problem
 On GitHub, open cvzone/cvzone and click Fork.
 
