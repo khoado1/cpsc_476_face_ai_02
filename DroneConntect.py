@@ -3,3 +3,12 @@ import time
 me = tello.Tello()
 me.connect()
 print(me.get_battery())
+
+me.takeoff()
+# Move using Distance
+me.move_up(80)
+# Move using Speed
+me.send_rc_control(0, 0, 0, 20)
+time.sleep(5)
+me.send_rc_control(0, 0, 0, 0)
+me.land()
