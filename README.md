@@ -9,6 +9,8 @@ pip install --upgrade pip
 pip install cvzone
 python CornerRectangleExample.py
 
+pip install djitellopy
+python tellopy.py
 
 #Steps to create pull request to fix a problem
 On GitHub, open cvzone/cvzone and click Fork.
